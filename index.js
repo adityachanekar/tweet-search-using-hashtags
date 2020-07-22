@@ -1,19 +1,19 @@
 const express = require('express');
 const app = express()
-const port = 6969 || process.env.PORT
-var fs = require('fs');
+const port =  process.env.PORT
 var twitter = require('twitter');
 var Sentiment = require('sentiment');
-// var secret = require('./config/secret.json');
 var bodyParser = require('body-parser');
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 var client = new twitter({
-    consumer_key: secret.consumer_key || process.env.CONSUMER_KEY,
-    consumer_secret: secret.consumer_secret || process.env.CONSUMER_SECRET,
-    bearer_token: secret.bearer_token || process.env.BEARER_TOKEN,
+    consumer_key:  process.env.CONSUMER_KEY,
+    consumer_secret: process.env.CONSUMER_SECRET,
+    bearer_token: process.env.BEARER_TOKEN,
 });
 
 var sentiment = new Sentiment()
@@ -61,7 +61,7 @@ app.get('/hashtag', (req, res) => {
 
             })
 
-            await res.render('tweets', { response: cluster })
+            res.render('tweets', { response: cluster })
         }
         else {
             res.render('index')
