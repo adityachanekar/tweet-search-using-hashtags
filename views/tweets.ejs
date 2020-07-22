@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tweet List</title>
+    <style>
+        #foot {
+            position: fixed;
+            padding: 0 10px 0 10px;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="container">
+                <form action="/hashtag" method="get" enctype="application/x-www-form-urlencoded">
+                    <input type="text" name="tag" placeholder="Hashtag" />
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="table-responsive">
+                    <table class="table">
+                        <th>Tweet</th>
+                        <th>Sentiment</th>
+                        <% response.forEach((resp) => { %>
+                        <tr>
+                            <td>
+                                <blockquote class="twitter-tweet">
+                                    <a href="https://twitter.com/x/status/<%= resp.id %>"></a>
+                                </blockquote>
+                            </td>
+                            <td><%= resp.score %></td>
+                        </tr>
+                        <% }) %>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <FOOTER id="foot" class="card-footer">
+
+        <h7>Developed by <a href="https://linkedin.com/in/aditya-chanekar-goa" target="_blank">Aditya</a></h3>
+    </FOOTER>
+</body>
+
+</html>

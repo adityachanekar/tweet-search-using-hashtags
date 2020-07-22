@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        
+    </style>
 </head>
+
 <body>
-    <blockquote class="twitter-tweet">
-        <a href="https://twitter.com/x/status/807811447862468608"></a>
-    </blockquote>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="container pt-3">Tweity</h1>
+                    <h4>Search Tweets based on Hashtags</h4>
+                </div>
+                <div class="card-body">
+                <div class="container pt-3 my-3">
+                    <form id="" action="/hashtag" method="get" enctype="application/x-www-form-urlencoded">
+                        <input type="text" name="tag" placeholder="Hashtag" class="form-control" />
+                                <br>
+                        <button type="submit" class="form-control btn btn-info">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card-footer " id="foot">
+
+                <h7>Developed by <a href="https://linkedin.com/in/aditya-chanekar-goa" target="_blank">Aditya</a></h3>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+    
 </body>
+
 </html>
