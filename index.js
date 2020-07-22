@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express()
+const router  = express.Router()
 const port =  process.env.PORT
 var twitter = require('twitter');
 var Sentiment = require('sentiment');
 var bodyParser = require('body-parser');
 
-
+app.use('/',router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
@@ -19,13 +20,13 @@ var client = new twitter({
 var sentiment = new Sentiment()
 
 
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.render('index');
 })
 
 
 
-app.get('/hashtag', (req, res) => {
+router.get( '/hashtag', (req, res) => {
 
     var hashtag = req.query.tag
     var hash = "#" + hashtag
